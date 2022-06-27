@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import './style.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+/**
+ * The App function returns a div with a h1, three buttons, and the h1 displays the number state.
+ * @returns A function that returns a div with three buttons and a h1 tag.
+ */
+const App = () =>{
+    const [number, setNumber] = useState(0)
+    return <div>
+        <h1>{number}</h1>
+        <button onClick={()=> setNumber(number+1)} className="button">Add</button>
+        <button onClick={()=> setNumber(number-1)} className="button">Less</button>
+        <button onClick={()=> setNumber(0)} className="button">Reset</button>
     </div>
-  );
 }
 
 export default App;
